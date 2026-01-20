@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf9;
+  /* stone-50 - softer than pure white */
+  --foreground: #1c1917;
+  /* stone-900 */
+
+  /* Brand Colors - Mystic Natural (Violet/Purple) */
+  --primary: #7c3aed;
+  /* violet-600 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #e7e5e4;
+  /* stone-200 */
+  --secondary-foreground: #1c1917;
+
+  --accent: #f5f3ff;
+  /* violet-50 */
+  --accent-foreground: #5b21b6;
+  /* violet-800 */
+
+  --border: #d6d3d1;
+  /* stone-300 */
+  --input: #d6d3d1;
+  --ring: #7c3aed;
+  /* violet-600 */
+  /* Font Stack Definition (DM Sans / Modern Geometric) */
+  --font-stack: var(--font-dm-sans), "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-playfair);
+  --font-heading: var(--font-dm-sans);
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-ping-slow: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-stack);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+}
