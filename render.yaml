@@ -1,0 +1,26 @@
+services:
+  # Frontend Service (Next.js)
+  - type: web
+    name: digital-life-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+
+  # Backend Service (Laravel)
+  - type: web
+    name: digital-life-backend
+    env: php
+    buildCommand: cd backend && composer install --no-dev --optimize-autoloader && php artisan migrate --force
+    startCommand: cd backend && heroku-php-apache2 public/
+    envVars:
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
